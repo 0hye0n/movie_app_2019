@@ -76,9 +76,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - jsx는 javascript 안에서의 HTML 이라고 생각하면 된다.
 - 컴포넌트를 만드는 방법에 대해서 학습함
 - js 파일에 export라인을 추가 하면 다른 js 파일에서 import 가능(안할경우 컴파일 에러가 남.)
-"""javascript
-export default Potato
-"""
+'''javascript
+export default Potato;
+'''
 
 - react application은 오직 한개의 component만을 렌더링 함.
 
