@@ -66,3 +66,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### 내용 정리
+2019-10-21
+- react is use component!!
+- 리액트는 컴포넌트를 사용해서 HTML처럼 작성하려는 경우에 필요하다....
+- 자바스크립트와  HTML사이의 이러한 조합을 jsx라고 부름 -> 리액트에서 나온 유일한 개념 (특화된 개념, 다른 분야로 가면 이 개념이 도움이 되지 않을거임..)
+- jsx는 javascript 안에서의 HTML 이라고 생각하면 된다.
+- 컴포넌트를 만드는 방법에 대해서 학습함
+- js 파일에 export라인을 추가 하면 다른 js 파일에서 import 가능(안할경우 컴파일 에러가 남.)
+"""javascript
+export default Potato
+"""
+
+- react application은 오직 한개의 component만을 렌더링 함.
+
