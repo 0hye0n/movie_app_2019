@@ -66,7 +66,38 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+------------------------------------------------------------------------------------------------------------------------------------------
 
+
+### github init repositories
+```
+git init
+```
+```
+git remote add origin https://github.com/dolkaiser/movie_app_2019 
+```
+
+### github upload
+```
+git add .
+```
+```
+git commit -m "https://github.com/dolkaiser/movie_app_2019"
+```
+```
+git push origin master
+```
+
+- 만약에 업로드가 잘 안될경우에 밑에 코드를 수행해 보셈!!
+```
+git remote remove origin
+```
+```
+git remote add origin https://github.com/dolkaiser/movie_app_2019 
+```
+```
+git push origin master --force
+```
 
 ### 내용 정리
 2019-10-21
@@ -79,6 +110,50 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ```javascript
 export default Potato;
 ```
-
 - react application은 오직 한개의 component만을 렌더링 함.
+```javascript
+ReactDOM.render(<App />, document.getElementById('root'));//여기에서 <App /> 부분이 하나의 component임
+```
 
+- map은 function을 취해서 그 function을 array의 각 item에 적용함
+
+```javascript
+const friends = ["a", "b", "c", "d"];
+friends.map(current => {
+    console.log(current);
+    return 0;
+}
+//위아 아래는 똑같은 문법임
+friends.map(function(current) {
+    console.log(current);
+    return 0;
+}
+)
+
+/*결과
+ a
+ b
+ c
+ d
+ (4) [0, 0, 0, 0]
+*/
+```
+
+```javascript
+friends.map(function(friends){
+    return friends + " good";
+})
+/*결과
+ (4) ["a good", "b good", "c good", "d good"]
+*/
+```
+
+- chrome에서 아래와 같은 메세지가 떳을 경우 객체의 각각의 요소에 대해서 id 값을 줘야함
+```
+warning : each child in a list should have a unique "key" prop.
+```
+
+```javascript
+//이런식으로
+<Food key={dish.id} name={dish.name} picture={dish.image}/>
+```
