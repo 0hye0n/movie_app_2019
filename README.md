@@ -148,7 +148,7 @@ friends.map(function(friends){
 */
 ```
 
-- chrome에서 아래와 같은 메세지가 떳을 경우 객체의 각각의 요소에 대해서 id 값을 줘야함
+- chrome에서 아래와 같은 메세지가 떳을 경우 객체의 각각의 요소에 대해서 id 값을 줘야함 -> map을 사용할 경우 안에서 각각의 element에 대해서 key 값을 가져야 함....
 ```
 warning : each child in a list should have a unique "key" prop.
 ```
