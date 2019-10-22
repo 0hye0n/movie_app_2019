@@ -157,3 +157,75 @@ warning : each child in a list should have a unique "key" prop.
 //이런식으로
 <Food key={dish.id} name={dish.name} picture={dish.image}/>
 ```
+
+2019-10-22
+- async => 이 함수가 약간의 시간의 걸리므로 끝날때까지 기다려 달라고 지정해주는것
+- async 를 함수이름 앞에 작성 해주고 함수 내부에서 어떤 부분에서 기다려야 하는지 await을 통해 지정
+```javascript
+getMovies = async () =>{
+    //await를 통해 정확히 어떤걸 기다려야 되는지 지정
+    const {
+      data: {
+        data :{movies}
+      }
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+```
+
+- axios....
+
+- es6에 의해서 아래와 같이 원하는 element들만을 얻을 수 있다.
+```javascript
+const {isLoading, movies} = this.state;
+```
+
+- javascript안에서 class를 지정할때 javascript안에서의 class와 헷갈려하므로(충돌 비슷하게 생기므로?) className으로 지정해줌.......
+```javascript
+class App extends React.Component
+{
+  state ={
+    isLoading: true,
+    movies: []
+  };
+
+  getMovies = async () =>{
+    const {
+      data: {
+        data :{movies}
+      }
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+    this.setState({movies, isLoading: false});
+  }
+
+  componentDidMount(){
+    this.getMovies();
+  }
+
+  render(){
+    const {isLoading, movies} = this.state;
+    //javascript안에서 class를 지정할때 javascript안에서의 class와 헷갈려하므로(충돌 비슷하게 생기므로?) className으로 지정해줌.......
+    return (
+      <section className="container">
+       {isLoading ? (
+       <div className="loader">
+         <span className="loader__text">Loading...</span>
+         </div>
+       ) : (
+          <div className="movies">
+            {movies.map(movie => (
+              <Movie 
+                    key={movie.id}
+                    id={movie.id} 
+                    year={movie.year} 
+                    title={movie.title} 
+                    summary={movie.summary} 
+                    poster={movie.medium_cover_image}
+                    genres={movie.genres}
+                    />
+         ))}
+          </div>
+       )}
+       </section> 
+    );
+  }
+}
+```
