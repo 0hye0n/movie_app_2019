@@ -68,7 +68,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-
+### github install and setting config
+```
+sudo apt-get install git-core
+```
+```
+git config --global user.name "이름"
+```
+```
+git config --global user.email "이메일 주소"
+```
 ### github init repositories
 ```
 git init
